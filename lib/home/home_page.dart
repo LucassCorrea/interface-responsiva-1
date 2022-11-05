@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:interface_responsiva/breakpoins.dart';
 import 'package:interface_responsiva/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:interface_responsiva/home/widgets/app_bar/web_app_bar.dart';
+import 'package:interface_responsiva/home/widgets/sections/top_section.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -22,6 +23,17 @@ class MyHomePage extends StatelessWidget {
                 ),
           drawer:
               constrains.maxWidth < mobileBreakpoint ? const Drawer() : null,
+          body: Align(
+            alignment: Alignment.topCenter,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 1200),
+              child: ListView(
+                children: const [
+                  TopSection(),
+                ],
+              ),
+            ),
+          ),
         );
       },
     );
