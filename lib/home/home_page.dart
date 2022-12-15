@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:interface_responsiva/breakpoins.dart';
 import 'package:interface_responsiva/home/widgets/app_bar/mobile_app_bar.dart';
 import 'package:interface_responsiva/home/widgets/app_bar/web_app_bar.dart';
+import 'package:interface_responsiva/home/widgets/sections/advantages_sections.dart';
+import 'package:interface_responsiva/home/widgets/sections/courses_section.dart';
 import 'package:interface_responsiva/home/widgets/sections/top_section.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -12,7 +14,8 @@ class MyHomePage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constrains) {
         return Scaffold(
-          appBar: constrains.maxWidth < mobileBreakpoint
+          backgroundColor: Colors.black,
+          appBar: constrains.maxWidth < tabletBreakpoint
               ? const PreferredSize(
                   preferredSize: Size(double.infinity, 56),
                   child: MobileAppBar(),
@@ -22,7 +25,7 @@ class MyHomePage extends StatelessWidget {
                   child: WebAppBar(),
                 ),
           drawer:
-              constrains.maxWidth < mobileBreakpoint ? const Drawer() : null,
+              constrains.maxWidth < tabletBreakpoint ? const Drawer() : null,
           body: Align(
             alignment: Alignment.topCenter,
             child: ConstrainedBox(
@@ -30,6 +33,8 @@ class MyHomePage extends StatelessWidget {
               child: ListView(
                 children: const [
                   TopSection(),
+                  AdvantagesSection(),
+                  CoursesSection(),
                 ],
               ),
             ),
