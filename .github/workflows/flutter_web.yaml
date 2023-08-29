@@ -30,9 +30,9 @@ jobs:
           cd build/web
           git init
           git config --global user.email lucasscorrea.dev@gmail.com
-          git config --global user.name LucassCorrea
+          git config --global user.name LuccasCorrea
           git status
-          git remote add origin https://${{secrets.token}}@github.com/LucassCorrea/LucassCorrea.github.io.git
+          git remote add origin https://${{secrets.token}}@github.com/LuccasCorrea/LuccasCorrea.github.io.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
